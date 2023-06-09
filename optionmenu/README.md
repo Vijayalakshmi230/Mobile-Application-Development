@@ -145,6 +145,7 @@ public class MainActivity extends AppCompatActivity
         android:id="@+id/exit"
         android:title="exit"
         app:showAsAction="never" />
+    
 </menu>
 
 
