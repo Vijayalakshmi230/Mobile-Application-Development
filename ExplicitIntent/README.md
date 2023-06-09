@@ -34,87 +34,126 @@ Registeration Number :212221040134
 ```
 **MainActivity.java:**
 
-package com.example.experiment_3;
+package com.example.experiment_4;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
-import android.widget.Button;
+
+import android.view.View;
+
 import android.widget.EditText;
-public class MainActivity extends AppCompatActivity 
+
+public class MainActivity extends AppCompatActivity
 {
 
-    Button button;
-    EditText editText;
+    EditText etNumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = findViewById(R.id.button);
-        editText =findViewById(R.id.editText);
-        button.setOnClickListener(view -> {
-            String url=editText.getText().toString();
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(intent);
-        });
+        etNumber=findViewById(R.id.etNumber);
+    }
+    public void displayFactorial(View view){
+        Intent i = new Intent(MainActivity.this,MainActivity2.class);
+        i.putExtra("number",etNumber.getText().toString());
+        startActivity(i);
     }
 }
+
 **activity_main.xml:**
 
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
+
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
+        android:layout_marginTop="50dp"
+        android:hint="@string/Enter_the_number"
         android:importantForAutofill="no"
-        android:inputType="text"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476"
-        tools:ignore="LabelFor,TextFields,SpeakableTextPresentCheck" />
+        android:inputType="number"
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="172dp"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
-        
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:onClick="displayFactorial"
+        android:text="factorial"
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
+    
+</LinearLayout>
+
+**MainActivity2.xml:**
+
+package com.example.experiment_4;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+
+
+import android.os.Bundle;
+
+import android.widget.TextView;
+
+public class MainActivity2 extends AppCompatActivity {
+    TextView tv;
+
+    @SuppressLint("SetTextI18n")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        Bundle b = getIntent().getExtras();
+        int no = Integer.parseInt(b.getString("number"));
+        long f = 1;
+        for (int i = no; i > 0; i--) {
+            f = f * i;
+        }
+        tv = findViewById(R.id.tv);
+        tv.setText("Factorial of " + no + " is " + f);
+    }
+}
+
+**ActivityMain2.xml:**
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/tv"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/factorial_of_number_is" />
+    
+</RelativeLayout>
 
 ## OUTPUT:
 
-![2023-06-08 (16)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/3b5aee89-d8df-4b30-a514-44b5b7c27f60)
+![2023-06-08 (18)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/758d5029-6aaa-49b3-becb-528f48708cf9)
 
+![2023-06-08 (19)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/ccce77d6-dbe9-4859-9b7b-16a6e24ba5a7)
 
-![2023-06-08 (15)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/6a4602c0-1008-4c9e-9a8b-b90bbbc13762)
-
-
-![2023-06-08 (14)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/3cd2b029-9efa-4b44-868a-e31be71298f9)
 
 
 ## RESULT
