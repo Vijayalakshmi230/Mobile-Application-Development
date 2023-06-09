@@ -11,6 +11,33 @@ Latest Version Android Studio
 
 ## ALGORITHM:
 
+Step1:Create a new Android Studio project.
+
+Step2:Open the layout file "activity_main.xml".
+
+Step3:Add a container layout to hold the gallery images (e.g., GridLayout, RecyclerView, or
+ViewPager).
+
+Step4:Within the container layout, add ImageView elements to display the images. You can
+set the image source using the android:src attribute or programmatically in the code.
+
+Step5:If using a GridLayout, specify the number of columns using the android:columnCount
+attribute.
+
+Step6:Customize the layout and appearance of the ImageView elements as desired.
+
+Step7:Add any necessary attributes or listeners to handle user interactions, such as clicks on
+the images.
+
+Step8:Optionally, create a data source to store the images (e.g., a list or an array of image
+references).
+
+Step9:Bind the data source to the gallery control to populate the images dynamically.
+
+Step10:Implement any additional functionality, such as zooming, sliding, or image
+transitions, if desired.
+
+Step11:Build and run the application to see the gallery control displaying the images.
 
 
 ## PROGRAM:
