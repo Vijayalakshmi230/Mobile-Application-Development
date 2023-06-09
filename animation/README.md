@@ -11,6 +11,37 @@ Android Studio(Latest Version)
 
 ## ALGORITHM:
 
+Step1: Start the program
+
+Step2: Create a necessary xml files
+
+Step3: Import the necessary packages and libraries.
+
+Step4: Create a class named MainActivity that extends AppCompatActivity.
+
+Step5: Declare ImageView and Button variables for the views in the layout.
+
+Step6: Override the onCreate() method and set the content view to the activity_main layout.
+
+Step7: Initialize the ImageView and Button variables by finding them using their IDs.
+
+Step8: Set click listeners for each button to handle the animation actions.
+
+Step9: Inside the click listeners:
+
+Step9.1: Load the animation from the appropriate XML file using
+AnimationUtils.loadAnimation() method.
+
+Step9.2: Start the animation on the ImageView by calling startAnimation() and passing the
+animation object.
+
+Step9.3: To stop the animation, call the clearAnimation() method on the ImageView.
+
+Step10: End the click listeners.
+
+Step11: End the onCreate() method.
+
+Step12: End the program
 
 
 ## PROGRAM:
@@ -338,4 +369,8 @@ public class MainActivity extends AppCompatActivity
 ![image](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/19bc1153-e0c8-44ef-a190-ad138321d91c)
 
 
-## RESULT
+## RESULT:
+
+Thus a Simple Android Application develop to add animation to
+imageview,move,blink,fade,clockwise,zoom,slide operation using Android Studio is
+developed and executed successfully.
