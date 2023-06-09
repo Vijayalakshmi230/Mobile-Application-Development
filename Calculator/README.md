@@ -224,6 +224,7 @@ public class MainActivity extends AppCompatActivity
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="20dp" />
+    
 </LinearLayout>
 
 ## Output:
