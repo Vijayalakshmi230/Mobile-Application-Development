@@ -33,9 +33,97 @@ Developed by:
 Registeration Number :
 */
 ```
+**MainAcitvity.java:**
 
-## OUTPUT
+package com.example.experiment_1;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity 
+{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toast.makeText(this, "onCreate Called", Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    protected void onRestart(){
+        Toast.makeText(this, "onRestart Called", Toast.LENGTH_SHORT).show();
+        super.onRestart();
+    }
+    @Override
+    protected void onStart(){
+        Toast.makeText(this, "onStart Called", Toast.LENGTH_SHORT).show();
+        super.onStart();
+    }
+    @Override
+    protected void onResume(){
+        Toast.makeText(this, "onResume Called", Toast.LENGTH_SHORT).show();
+        super.onResume();
+    }
+    @Override
+    protected void onPause(){
+        Toast.makeText(this, "onPause Called", Toast.LENGTH_SHORT).show();
+        super.onPause();
+    }
+    @Override
+    protected void onStop(){
+        Toast.makeText(this, "onStop Called", Toast.LENGTH_SHORT).show();
+        super.onStop();
+    }
+    @Override
+    protected void onDestroy(){
+        Toast.makeText(this, "onDestroy Called", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+}
+
+**activity_main.xml:**
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpUsage,TextSizeCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+## OUTPUT:
+
+![2023-06-08 (1)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/23843f48-d075-4308-a61c-5180ba40f531)
+
+
+![2023-06-08 (2)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/2ffed0d9-e0ec-4b5a-8db6-3e5f7e1b8b8c)
+
+
+![2023-06-08 (3)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/90fa8b79-31c2-4fc7-ab8d-27e75bf24e02)
+
+
+![2023-06-08 (5)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/4aa53bb5-8861-46ec-a9ab-9779305ad990)
+
+
+![2023-06-08 (7)](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/d98d230e-bf7a-4799-9ee3-f621360adace)
+
+
+![2023-06-08](https://github.com/Vijayalakshmi230/Mobile-Application-Development/assets/127175503/c407331d-379f-4624-9da4-7d8199734d32)
 
 
 
